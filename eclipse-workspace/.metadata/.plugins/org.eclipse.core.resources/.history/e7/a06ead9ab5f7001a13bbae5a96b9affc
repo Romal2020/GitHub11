@@ -1,0 +1,10 @@
+@addEmployee
+Feature: Add Employee
+
+Scenario: Add employee without login details
+When login with valid credentials
+Then navigate to add employee page 
+And enter first and last name
+Then click on save Button
+And verify the employee is added successfully
+

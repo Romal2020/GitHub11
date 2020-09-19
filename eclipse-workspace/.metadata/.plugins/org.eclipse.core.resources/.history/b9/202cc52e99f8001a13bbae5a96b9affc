@@ -1,0 +1,15 @@
+package com.syntax.parctice;
+
+import com.syntax.Testbase.BaseClass;
+import com.syntax.pages.LoginPageWebElements;
+
+public class TestLogin extends BaseClass{
+	@Test
+	public void loginTest() {
+		LoginPageWebElements login = new LoginPageWebElements();
+		login.username.sendKeys("Admin");
+		login.password.sendKeys("admin123");
+		login.loginBtn.click();
+	}
+
+}

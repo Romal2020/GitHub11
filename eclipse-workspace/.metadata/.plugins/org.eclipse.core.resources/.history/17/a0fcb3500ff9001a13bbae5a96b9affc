@@ -1,0 +1,19 @@
+package com.hrms.stepsDefinations;
+
+import com.hrms.utils.CommonMethods;
+
+import io.cucumber.java.en.Then;
+
+public class AddEmployeeStepDefenitions extends CommonMethods {
+
+	@Then("navigate to add employee page")
+	public void navigate_to_add_employee_page() {
+		click(dash.pimLinkBtn);
+		click(dash.addEmpBtn);
+	}
+	@Then("enter first and last name")
+	public void enter_first_and_last_name() {
+		sendText(addEmp.firstNameField, "Shamtalo");
+		
+	}
+}

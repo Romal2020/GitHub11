@@ -1,0 +1,12 @@
+package com.syntax.class09;
+
+public class Pattrens {
+
+	public static void main(String[] args) {
+		System.out.println("Silly way , not nested loop");
+		for (int i = 1; i <= 4; i++) {
+			System.out.println("*****");
+
+		}
+	}
+}

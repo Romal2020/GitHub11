@@ -1,0 +1,61 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-09-18T17:25:13.629Z",
+        "line": 4,
+        "name": "Dashboard tab verification",
+        "description": "",
+        "id": "dashboard-functionality;dashboard-tab-verification",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 5,
+            "name": "login with valid credentials",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "verify the following dashboard tabs",
+            "match": {},
+            "rows": [
+              {
+                "cells": [
+                  "Admin",
+                  "PIM",
+                  "Leave",
+                  "Time",
+                  "Recruitment",
+                  "Performance",
+                  "Dashboard",
+                  "Directory"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@dash"
+          }
+        ]
+      }
+    ],
+    "name": "Dashboard Functionality",
+    "description": "",
+    "id": "dashboard-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Dashboard.feature",
+    "tags": []
+  }
+]

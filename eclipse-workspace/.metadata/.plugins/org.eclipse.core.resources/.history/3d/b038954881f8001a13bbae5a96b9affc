@@ -1,0 +1,11 @@
+package com.syntax.parctice;
+
+import com.syntax.Testbase.BaseClass;
+
+public class TestLogin extends BaseClass{
+	@Test
+	public void loginTest() {
+		
+	}
+
+}

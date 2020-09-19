@@ -1,0 +1,14 @@
+package com.hrms.utils;
+
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+public class Listeners implements ITestListener {
+	public void onTestSuccess(ITestResult result) {
+		CommonMethods.takeScreenshot("Passed/" + result.getName());
+	}
+
+	public void onTestfailure(ITestResult result) {
+		CommonMethods.takeScreenshot("Failed/" + result.getName());
+	}
+}
