@@ -1,0 +1,15 @@
+package com.syntax.class15;
+
+public class ReplaceFunction {
+
+	public static void main(String[] args) {
+		String me="I am a good tester. I am good person";
+		String str ="Hello";
+		str=str.replace('e', 'E');
+		System.out.println(str);
+		me =me.replace("good", "great");
+		System.out.println(me);
+
+	}
+
+}

@@ -1,22 +1,31 @@
 [
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "start_timestamp": "2020-09-18T17:25:13.629Z",
-        "line": 4,
-        "name": "Dashboard tab verification",
+        "start_timestamp": "2020-11-04T20:22:38.965Z",
+        "line": 10,
+        "name": "Creating employees",
         "description": "",
-        "id": "dashboard-functionality;dashboard-tab-verification",
+        "id": "creating-employees;creating-employees;;2",
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
               "status": "undefined"
             },
             "line": 5,
-            "name": "login with valid credentials",
+            "name": "a request is prepared to create employees",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "employee data provided is \"Bob\", \"Bob\", \"Bob\",\"M\",\"2000-07-11\",\"Employee\",\"Cloud Architect\"",
             "match": {},
             "keyword": "When "
           },
@@ -24,38 +33,119 @@
             "result": {
               "status": "undefined"
             },
-            "line": 6,
-            "name": "verify the following dashboard tabs",
+            "line": 7,
+            "name": "employees are created",
             "match": {},
-            "rows": [
-              {
-                "cells": [
-                  "Admin",
-                  "PIM",
-                  "Leave",
-                  "Time",
-                  "Recruitment",
-                  "Performance",
-                  "Dashboard",
-                  "Directory"
-                ]
-              }
-            ],
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@dash"
+            "name": "@CreateEmployees"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-04T20:22:39.118Z",
+        "line": 11,
+        "name": "Creating employees",
+        "description": "",
+        "id": "creating-employees;creating-employees;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 5,
+            "name": "a request is prepared to create employees",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "employee data provided is \"Gozde\", \"Gozde\", \"Gozde\",\"F\",\"2000-07-11\",\"Independent contractor\",\"API Tester\"",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 7,
+            "name": "employees are created",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@CreateEmployees"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-04T20:22:39.136Z",
+        "line": 12,
+        "name": "Creating employees",
+        "description": "",
+        "id": "creating-employees;creating-employees;;4",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 5,
+            "name": "a request is prepared to create employees",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "employee data provided is \"Irma\", \"Irma\", \"Irma\",\"F\",\"2000-07-11\",\"Super Contractor\",\"CEO\"",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 7,
+            "name": "employees are created",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@CreateEmployees"
           }
         ]
       }
     ],
-    "name": "Dashboard Functionality",
-    "description": "",
-    "id": "dashboard-functionality",
+    "name": "Creating Employees",
+    "description": "  Description: This feature creates employees",
+    "id": "creating-employees",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/Dashboard.feature",
-    "tags": []
+    "uri": "file:src/test/resources/features/CreateEmployees.feature",
+    "tags": [
+      {
+        "name": "@CreateEmployees",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
   }
 ]

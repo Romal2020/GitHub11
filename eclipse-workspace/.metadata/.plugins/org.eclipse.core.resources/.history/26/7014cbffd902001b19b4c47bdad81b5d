@@ -1,0 +1,26 @@
+package com.syntax.class15;
+
+public class ReplaceFunction {
+
+	public static void main(String[] args) {
+		String me = "I am a good tester. I am good person";
+		String str = "Hello";
+		str = str.replace('e', 'E');
+		System.out.println(str);
+		me = me.replace("good", "great");
+		System.out.println(me);
+		me = me.replace("we", "us");
+		System.out.println(me);
+		//replacing all characterfromA-Z
+		String fromApplication="phone number is 1234567890";
+		fromApplication=fromApplication.replace("[A-Z]", "");
+		System.out.println(fromApplication);//hone number is 1234567890
+		//replacing all character from a-z
+		fromApplication=fromApplication.replaceAll("[a-z]", "").trim();
+		System.out.println("New string value is="+fromApplication);
+		String another= "Hello12345";
+		another=another.replaceAll("[A-Z]", "").replaceAll("[a-z]", "");
+		System.out.println(another);
+	}
+
+}

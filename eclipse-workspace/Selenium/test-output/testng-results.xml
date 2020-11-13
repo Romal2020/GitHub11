@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32" started-at="2020-08-27T23:33:11 EDT" finished-at="2020-08-27T23:33:11 EDT">
+  <suite name="Default suite" duration-ms="34" started-at="2020-09-21T01:30:33 EDT" finished-at="2020-09-21T01:30:33 EDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32" started-at="2020-08-27T23:33:11 EDT" finished-at="2020-08-27T23:33:11 EDT">
+    <test name="Default test" duration-ms="34" started-at="2020-09-21T01:30:33 EDT" finished-at="2020-09-21T01:30:33 EDT">
       <class name="com.syntax.class11.TesnNgtest">
-        <test-method status="PASS" signature="hello()[pri:0, instance:com.syntax.class11.TesnNgtest@6e0e048a]" name="hello" duration-ms="7" started-at="2020-08-27T23:33:11 EDT" finished-at="2020-08-27T23:33:11 EDT">
+        <test-method status="PASS" signature="hello()[pri:0, instance:com.syntax.class11.TesnNgtest@7fac631b]" name="hello" duration-ms="7" started-at="2020-09-21T01:30:33 EDT" finished-at="2020-09-21T01:30:33 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- hello -->

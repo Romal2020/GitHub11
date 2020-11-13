@@ -10,17 +10,21 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class SoftAssertionExample {
+
+
 	public static WebDriver driver;
+
 	@BeforeMethod(alwaysRun = true)
 	public void openBrowser() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
-	driver=new ChromeDriver();
-	driver.get("http://166.62.36.207/humanresources/symfony/web/index.php/auth/login");
-	driver.manage().window().maximize();
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
+		driver = new ChromeDriver();
+		driver.get("http://18.232.148.34/humanresources");
+		// driver.manage().window().maximize();
 	}
+
 	@AfterMethod(alwaysRun = true)
 	public void closeBrowser() {
-		driver.quit();
+	driver.quit();
 	}
 
 	@Test
@@ -52,4 +56,3 @@ public class SoftAssertionExample {
 		softAssertion.assertAll();//to throw all failed assertions
 	}
 }
-

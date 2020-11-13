@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;configs&apos; to &apos;SyntaxHrms&apos;&#x0D;&#x0A;- Original project: &apos;JavaBatch7&apos;&#x0D;&#x0A;- Destination element: &apos;SyntaxHrms&apos;&#x0D;&#x0A;- Original element: &apos;configs&apos;" description="Copy folder" destination="=SyntaxHrms" element1="configs" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1601082649233" units="0" version="1.0"/>
+</session>

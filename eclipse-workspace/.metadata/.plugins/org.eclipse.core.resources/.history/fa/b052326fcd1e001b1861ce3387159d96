@@ -1,0 +1,13 @@
+package com.hrms.APIFinalSteps;
+
+import io.cucumber.java.en.Given;
+
+public class GenerateTokenSteps {
+
+	static public String token;
+	@Given("aJWT is generated")
+	public void a_JWT_is_generated() {
+		RequeastSpecification generateTokenRequest = given().header("Content-Type","application/json")
+				.body
+	}
+}

@@ -1,6 +1,6 @@
 package com.syntax.class11;
 
-
+import org.junit.Test;
 
 public class TesnNgtest {
 @Test

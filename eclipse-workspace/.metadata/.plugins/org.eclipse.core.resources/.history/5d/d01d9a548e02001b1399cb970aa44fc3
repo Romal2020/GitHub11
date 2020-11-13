@@ -1,0 +1,15 @@
+package com.syntax.class14;
+
+public class StringMethodsContinue {
+
+	public static void main(String[] args) {
+		System.out.println("----------------------- .contains() method ------------------------");
+		//checks is String contains another sequence of specified characters
+		String str="Good afternoon All";
+		
+		boolean contains=str.contains("afternoon");
+		System.out.println(contains);
+
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.syntax.class14;
+
+public class StringMethodsContinue {
+
+	public static void main(String[] args) {
+		System.out.println("----------------------- .contains() method ------------------------");
+		//checks is String contains another sequence of specified characters
+		String str="Good afternoon All";
+		
+		boolean contains=str.contains("afternoon");
+		System.out.println(contains);
+
+		String searchValue="good";
+		boolean isItThere=str.contains(searchValue);
+		System.out.println(isItThere);
+		
+		System.out.println(str.contains("A"));
+		System.out.println(str.contains("after "));
+		System.out.println("----------------------- .startsWith() method ------------------------");
+		
+		String drink ="Welcome students";
+		boolean starts=drink.startsWith("Welcome");
+		System.out.println(starts);
+		
+		System.out.println("----------------------- .endsWith() method ------------------------");
+		boolean ends=drink.endsWith("a");
+		System.out.println(ends);
+		
+		//drink.startsWith('w'); CE: we need to check if it starts with specified String , cannot be just char
+		
+		
+		
+	}
+
+}

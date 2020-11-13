@@ -1,0 +1,41 @@
+package com.hrms.utils;
+
+import org.json.JSONObject;
+
+public class APIPayloadCommonMEthods {
+
+	public static String createEmployeeBody() {
+		String createEmployeeBody = "{\r\n" + "  \"emp_firstname\": \"Rohit\",\r\n"
+				+ "  \"emp_lastname\": \"Sondhi\",\r\n" + "  \"emp_middle_name\": \"n/a\",\r\n"
+				+ "  \"emp_gender\": \"M\",\r\n" + "  \"emp_birthday\": \"2000-10-18\",\r\n"
+				+ "  \"emp_status\": \"Employee\",\r\n" + "  \"emp_job_title\": \"Cloud Architect\"\r\n" + "}";
+		return createEmployeeBody;
+	}
+
+	public static String createEmployeePayload() {
+		JSONObject obj = new JSONObject();
+		obj.put("emp_firstname", "Rohit");
+		obj.put("emp_lastname", "Sondhi");
+		obj.put("emp_middle_name", "n/a");
+		obj.put("emp_gender", "M");
+		obj.put("emp_birthday", "2000-10-18");
+		obj.put("emp_status", "Employee");
+		obj.put("emp_job_title", "Cloud Architect");
+		return obj.toString();
+	}
+
+	public static String createEmployeePayloadMoreDynamic(String firstName, String lastName, String middleName,
+			String gender, String dob, String employeeStatus, String employeeJobTitle) {
+
+		JSONObject obj = new JSONObject();
+		obj.putOnce("emp_firstname", firstName);
+		obj.put("emp_firstname", firstName);
+		obj.put("emp_lastname", lastName);
+		obj.put("emp_middle_name", middleName);
+		obj.put("emp_gender", gender);
+		obj.put("emp_birthday", dob);
+		obj.put("emp_status", employeeStatus);
+		obj.put("emp_job_title", employeeJobTitle);
+		return obj.toString();
+	}
+}

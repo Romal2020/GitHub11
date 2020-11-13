@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.syntax.TestNG4.HW">
+      <class name="com.syntax.TestNG1.HrmsTestCases">
         <methods>
-          <include name="addEmployee" invocation-numbers="0 1 2 3 4"/>
-          <include name="openBrowser"/>
+          <include name="validLogin"/>
           <include name="closeBrowser"/>
+          <include name="openBrowser"/>
         </methods>
-      </class> <!-- com.syntax.TestNG4.HW -->
+      </class> <!-- com.syntax.TestNG1.HrmsTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

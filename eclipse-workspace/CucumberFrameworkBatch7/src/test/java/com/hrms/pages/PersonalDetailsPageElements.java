@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.hrms.testbase.BaseClass;
 
 public class PersonalDetailsPageElements extends BaseClass {
-	
 	@FindBy(xpath = "//div[@id='profile-pic']/h1")
 	public WebElement profileName;
 

@@ -1,0 +1,42 @@
+package com.syntax.class15;
+
+import java.util.Scanner;
+
+public class HW2 {
+
+	public static void main(String[] args) {
+		Scanner scan =new Scanner(System.in);
+		System.out.println("Please enter father's name:");
+		String name1 = scan.nextLine();
+		System.out.println("Please enter mother's name:");
+		
+		String name2 = scan.nextLine();
+		System.out.println("Is it a boy or girl?");
+		
+		String gender = scan.nextLine();
+		String babyName;
+		if(gender.toLowerCase().equals("boy")) {
+			System.out.println("congratulations, It is a boy");
+			babyName= name1.substring(0, name1.length()/2) + name2.substring(name2.length()/2);
+		} else if(gender.equalsIgnoreCase("girl")){
+			System.out.println("Congratulations it is girl ");
+			babyName=name2.substring(0, name2.length()/2)+name1.substring(name1.length()/2);
+		} else {
+			babyName="Unkown";
+		}
+		System.out.println(babyName.toUpperCase());
+		scan.close();
+		
+		String day="Sunday";
+		//string --> char -->sorry cannot string method because you are not a string 
+		//day.charAt(1).toUpperCase();
+		//String --> string -->char
+		char letter =day.toUpperCase().charAt(1);
+		int lengthOfNewDay = day.substring(3).toUpperCase().length();
+		System.out.println(lengthOfNewDay);
+				
+		
+
+	}
+
+}

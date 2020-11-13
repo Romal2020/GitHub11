@@ -9,11 +9,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class GroupsExample {
+
 	public static WebDriver driver;
 
 	@BeforeMethod(alwaysRun = true)
 	public void openBrowser() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
 		driver = new ChromeDriver();
 		driver.get("http://166.62.36.207/humanresources/symfony/web/index.php/auth/login");
 		// driver.manage().window().maximize();
@@ -24,10 +25,10 @@ public class GroupsExample {
 		driver.quit();
 	}
 
-	@Test(groups = "smoke")
+	@Test(groups = "Smoke")
 	public void validLogin() {
 		driver.findElement(By.id("txtUsername")).sendKeys("Admin");
-		driver.findElement(By.id("txtPassword")).sendKeys("Hum@nhrm123");
+		driver.findElement(By.id("txtPasswor")).sendKeys("Hum@nhrm123");
 		driver.findElement(By.cssSelector("input#btnLogin")).click();
 		String welcomeText = driver.findElement(By.id("welcome")).getText();
 		if (welcomeText.contains("Admin")) {

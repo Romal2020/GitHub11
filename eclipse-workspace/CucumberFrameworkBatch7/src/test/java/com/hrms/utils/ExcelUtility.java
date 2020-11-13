@@ -14,8 +14,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtility {
 
-	static Workbook book;
-	static Sheet sheet;
+	private static Workbook book;
+	private static Sheet sheet;
 
 	public static void openExcel(String filePath) {
 		try {
@@ -44,19 +44,19 @@ public class ExcelUtility {
 		return sheet.getRow(rowIndex).getCell(colIndex).toString();
 	}
 
-	public static List<Map<String, String>> excelToListMap (String filePath, String sheet){
-		List<Map <String, String >> list = new ArrayList<>();
+	public static List<Map<String, String>> excelToListMap(String filePath, String sheet) {
+		List<Map<String, String>> list = new ArrayList<>();
 		Map<String, String> map;
-		
+
 		openExcel(filePath);
 		getSheet(sheet);
-		
-		for(int r=1; r<getRowsCount(); r++) {
-			map=new LinkedHashMap<>();
-			
-			for(int c=0;c<getColsCount(r); c++) {
-				String key=getCellData(0, c);
-				String value=getCellData(r, c);
+
+		for (int r = 1; r < getRowsCount(); r++) {
+			map = new LinkedHashMap<>();
+
+			for (int c = 0; c < getColsCount(r); c++) {
+				String key = getCellData(0, c);
+				String value = getCellData(r, c);
 				map.put(key, value);
 			}
 			list.add(map);

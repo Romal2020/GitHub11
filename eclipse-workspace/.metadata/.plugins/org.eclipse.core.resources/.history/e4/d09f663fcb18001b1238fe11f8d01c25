@@ -1,0 +1,12 @@
+package com.hrms.utils;
+
+public class APIConstants {
+
+	public static final String GENERATE_TOKEN_URI = "";
+			public static final String CREATE_EMPLOYEE_URI = "";
+			public static final String get_one_employee = "";
+			public static final String 
+			public static final String
+			public static final String
+			public static final String
+}

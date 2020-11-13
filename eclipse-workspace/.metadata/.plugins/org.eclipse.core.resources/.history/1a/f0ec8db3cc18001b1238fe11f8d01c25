@@ -1,0 +1,12 @@
+package com.hrms.APIFinalSteps;
+
+import io.cucumber.java.en.Given;
+
+public class APIFinalSteps {
+
+	@Given("a request is prepared to create an employee")
+	public void a_request_is_prepared_to_create_an_employee() {
+		given().header()
+	}
+	
+}

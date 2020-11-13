@@ -1,0 +1,14 @@
+package com.syntax.class14;
+
+public class StringDifference {
+
+	public static void main(String[] args) {
+
+		String name="Neil";
+		String name1=new String ("Neil");
+		System.out.println(name);
+		System.out.println(name1);
+
+	}
+
+}

@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -17,12 +18,21 @@ public class BaseClass {
 	protected static WebDriver driver;
 
 	public static void setUp() {
-		ConfigsReader.readproperties(Constants.CONFIGURATION_FILEPATH);
+
+		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
+       String headless =  ConfigsReader.getPropValue("headless");
+       
 		switch (ConfigsReader.getPropValue("browser").toLowerCase()) {
-		
+
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			if(headless.equalsIgnoreCase("true")) {
+				chromeOptions.setHeadless(true);
+				driver = new ChromeDriver(chromeOptions);
+			}else{
 			driver = new ChromeDriver();
+			}
 			break;
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
@@ -35,7 +45,8 @@ public class BaseClass {
 		default:
 			throw new RuntimeException("Browser is not supported");
 		}
-		driver.manage().window().maximize();
+
+		// driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
 		driver.get(ConfigsReader.getPropValue("applicationUrl"));
 		PageInitializer.initializePageObjects();

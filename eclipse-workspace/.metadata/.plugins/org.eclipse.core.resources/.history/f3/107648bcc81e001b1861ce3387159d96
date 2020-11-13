@@ -1,0 +1,18 @@
+package com.hrms.APIFinalSteps;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class CreateEmployees {
+
+	@Given("a request is prepared to create employees")
+	public void a_request_is_prepared_to_create_employees() {
+	}
+	@When("employee data provided is {string}, {string}, {string},{string},{string},{string},{string}")
+	public void employee_data_provided_is(String string, String string2, String string3, String string4, String string5, String string6, String string7) {
+	}
+	@Then("employees are created")
+	public void employees_are_created() {
+	}
+}

@@ -31,11 +31,7 @@ public class takeScreenshotDemo {
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File sourceFile = ts.getScreenshotAs(OutputType.FILE);
-		try {
-			FileUtils.copyFile(sourceFile, new File("screenshots/HRMS/adminLogin.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		FileUtils.copyFile(sourceFile, new File("screenshots/HRMS/adminLogin.png"));
 		Thread.sleep(2000);
 		driver.quit();
 		

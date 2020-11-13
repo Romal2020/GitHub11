@@ -1,0 +1,20 @@
+package com.syntax.class14;
+
+public class StriongMethodsMore {
+	public static void main(String[] args) {
+		System.out.println("=----------.charAt()method--------------");
+		String season = "summer";
+		char character = season.charAt(4);
+		System.out.println(character);
+		
+		System.out.println("----------------------- .indexOf() method ------------------------");
+		
+		int index=season.indexOf('m');
+		System.out.println(index);
+		
+		String hello="Hello Ksenia";
+		int indexOfKsenia=hello.indexOf("Ksenia");
+		System.out.println("Index of Ksenia in the string "+hello+ " is ="+indexOfKsenia);
+
+	}
+}

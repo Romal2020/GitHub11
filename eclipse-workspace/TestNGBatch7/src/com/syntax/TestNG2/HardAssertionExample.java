@@ -9,42 +9,42 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-	public class HardAssertionExample {
+public class HardAssertionExample {
 
 	public static WebDriver driver;
 
 	@BeforeMethod(alwaysRun = true)
 	public void openBrowser() {
-	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
-	driver = new ChromeDriver();
-	driver.get("http://166.62.36.207/humanresources/symfony/web/index.php/auth/login");
-	// driver.manage().window().maximize();
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
+		driver = new ChromeDriver();
+		driver.get("http://166.62.36.207/humanresources/symfony/web/index.php/auth/login");
+		// driver.manage().window().maximize();
 	}
 
 	@AfterMethod(alwaysRun = true)
 	public void closeBrowser() {
-	driver.quit();
+		driver.quit();
 	}
 
 	@Test(groups="regression")
 	public void titleValidation() {
-	String expectedTitle = "Human Management System";
-	String actualTitle = driver.getTitle();// "Human Management System"
-	Assert.assertEquals(actualTitle, expectedTitle);
+		String expectedTitle = "Human Management Systems";
+		String actualTitle = driver.getTitle();// "Human Management System"
+		Assert.assertEquals(actualTitle, expectedTitle);
+		System.out.println("  -- Code after assertion ---");
+		System.out.println("-- End of test titleValidation --- ");
 	}
-
+	
 	@Test(groups="regression")
 	public void logoValidation() {
-	WebElement element=driver.findElement(By.xpath("//div[@id='divLogo']/img"));
-	Assert.assertTrue(element.isDisplayed());
+		WebElement element=driver.findElement(By.xpath("//div[@id='divLogo']/img"));
+		Assert.assertTrue(element.isDisplayed());
 	}
-
+	
 	@Test(groups="regression")
 	public void loginFormText() {
-	String expectedText="LOGIN Panel";
-	WebElement loginForm=driver.findElement(By.id("logInPanelHeading"));
-	Assert.assertEquals(loginForm.getText(), expectedText, "Text on the Login panel is not matched");
+		String expectedText="LOGIN Panels";
+		WebElement loginForm=driver.findElement(By.id("logInPanelHeading"));
+		Assert.assertEquals(loginForm.getText(), expectedText, "Text on the Login panel is not matched");
 	}
-	}
-
-
+}

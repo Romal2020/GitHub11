@@ -1,0 +1,73 @@
+package com.hrms.APIFinalSteps;
+import static org.hamcrest.Matchers.*;
+
+import com.hrms.utils.APIConstants;
+import com.hrms.utils.APIPayloadCommonMethods;
+import com.hrms.utils.CommonMethods;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class APIFinalSteps {
+
+	RequestSpecification request;
+	Response response;
+	//String BaseURI = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api";
+	// String BaseURI = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api";
+	static String employeeID;
+
+	@Given("a request is prepared to create an employee")
+	public void a_request_is_prepared_to_create_an_employee() {
+//		request = given().header("Authorization", GenerateTokenSteps.token).header("Content-Type", "application/json")
+//				.body(APIPayloadCommonMethods.createEmployeePayload()).log().all();
+
+		request = given().header("Authorization", GenerateTokenSteps.token).header("Content-Type", "application/json")
+				.body("{\n" + "  \"emp_firstname\": \"syntaxFirstName\",\n"
+						+ "  \"emp_lastname\": \"syntaxLastName\",\n" + "  \"emp_middle_name\": \"syntaxMiddleName\",\n"
+						+ "  \"emp_gender\": \"F\",\n" + "  \"emp_birthday\": \"2000-07-11\",\n"
+						+ "  \"emp_status\": \"Employee\",\n" + "  \"emp_job_title\": \"Cloud Architect\"\n" + "}")
+				.log().all();
+				.body(CommonMethods.readJson(APIConstants.CREATE_EMPLOYEE_JSON));
+	}
+
+	@When("a POST call is made to create an employee")
+	public void a_POST_call_is_made_to_create_an_employee() {
+
+		response = request.when().post(APIConstants.CREATE_EMPLOYEE_URI);
+
+	}
+
+	@Then("the status code for creating an employee is {int}")
+	public void the_status_code_for_creating_an_employee_is(int statusCode) {
+
+		response.then().assertThat().statusCode(statusCode);
+	}
+
+	@Then("the employee is created")
+	public void the_employee_is_created() {
+
+		response.then().assertThat().body("Message", equalTo("Entry Created"));
+	@Then("the employee is created contains key {string} and value {string}")
+	public void the_employee_is_created_contains_key_and_value(String key, String value) {
+
+		response.then().assertThat().body(key, equalTo(value));
+	}
+
+	@Then("the employee ID is stored as a global variable to be used for other calls")
+	public void the_employee_ID_is_stored_as_a_global_variable_to_be_used_for_other_calls() {
+
+		employeeID = response.jsonPath().getString("Employee[0].employee_id");
+
+	@Then("the employee ID {string} is stored as a global variable to be used for other calls")
+	public void the_employee_ID_is_stored_as_a_global_variable_to_be_used_for_other_calls(String value) {
+		employeeID = response.jsonPath().getString(value);
+	}
+	
+
+	@Given("a request is prepared to retrieve the created employee")
+	public void a_request_is_prepared_to_retrieve_the_created_employee() {
+	}
+	}

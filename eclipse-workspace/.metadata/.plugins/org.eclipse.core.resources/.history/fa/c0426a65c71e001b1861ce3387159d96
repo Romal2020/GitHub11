@@ -1,0 +1,16 @@
+package com.hrms.utils;
+
+public class APIPayloadConstants {
+
+	public void createEmployeeBody() {
+		String createEmployeeBody ="{\r\n"
+				+ "  \"emp_firstname\": \"Rohit\",\r\n"
+				+ "  \"emp_lastname\": \"Sondhi\",\r\n"
+				+ "  \"emp_middle_name\": \"n/a\",\r\n"
+				+ "  \"emp_gender\": \"M\",\r\n"
+				+ "  \"emp_birthday\": \"2000-10-18\",\r\n"
+				+ "  \"emp_status\": \"Employee\",\r\n"
+				+ "  \"emp_job_title\": \"Cloud Architect\"\r\n"
+				+ "}";
+	}
+}

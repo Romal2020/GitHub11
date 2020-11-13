@@ -9,22 +9,23 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Dependency {
+
 	public static WebDriver driver;
 
 	@BeforeMethod(alwaysRun = true)
 	public void openBrowser() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe" );
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
 		driver = new ChromeDriver();
-		driver.get("http://18.232.148.34/humanresources/symfony/web/index.php/auth/login");
+		driver.get("http://166.62.36.207/humanresources/symfony/web/index.php/auth/login");
+		// driver.manage().window().maximize();
 	}
 
 	@AfterMethod(alwaysRun = true)
-
 	public void closeBrowser() {
-		//driver.quit();
+		driver.quit();
 	}
 
-	@Test(groups = "smoke")
+	@Test
 	public void validLogin() {
 		driver.findElement(By.id("txtUsername")).sendKeys("Admin");
 		driver.findElement(By.id("txtPassword")).sendKeys("Hum@nhrm123");
@@ -37,18 +38,19 @@ public class Dependency {
 		}
 	}
 
-	@Test(groups = "regression", dependsOnMethods = "validLogin")
-	public void invalidLogin() throws InterruptedException {
+	@Test(dependsOnMethods = "validLogin") // if validLogin pass ONLY then execute invalidLogin
+	// otherwise if validLogin fails then DO NOT EXECUTE invalidLogin (invalid Login
+	// test will be skipped)
+	public void invalidLogin() {
 		driver.findElement(By.id("txtUsername")).sendKeys("Admin");
 		driver.findElement(By.cssSelector("input#btnLogin")).click();
 		WebElement message = driver.findElement(By.id("spanMessage"));
-		String expectedMsg = "password cannot be empty";
+		String expectedMsg = "Password cannot be empty";
 		String actualMsg = message.getText();
-		if(actualMsg.equals(expectedMsg)) {
-			System.out.println("Test pass");
+		if (actualMsg.equals(expectedMsg)) {
+			System.out.println("Test PASS");
 		} else {
-			System.out.println("Test  fail");
+			System.out.println("Test FAIL");
 		}
-Thread.sleep(3000);
 	}
 }

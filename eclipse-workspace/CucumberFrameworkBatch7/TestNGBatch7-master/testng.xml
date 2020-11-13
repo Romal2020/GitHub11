@@ -1,0 +1,9 @@
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="com.syntax.class2.HardAssertionExample" />
+			<class name="com.syntax.class2.SoftAssertionExample" />
+			<class name="com.syntax.class2.Dependency" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

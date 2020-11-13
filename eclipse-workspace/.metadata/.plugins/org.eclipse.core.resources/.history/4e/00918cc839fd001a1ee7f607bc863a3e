@@ -1,0 +1,11 @@
+Feature: Login Functionality
+@smoke1
+  Scenario: Login with valid credentials
+    
+    When login with valid credentials
+    Then verify the dashboard logo is displayed
+    And quit the browser
+
+  Scenario: Login with invalid credentials
+    When login with valid credentials
+    Then verify the error message
